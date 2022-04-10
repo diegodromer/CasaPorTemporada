@@ -3,6 +3,7 @@ package com.diegolima.casaportemporada.activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.pm.FeatureGroupInfo;
 import android.os.Bundle;
 import android.view.View;
@@ -76,7 +77,11 @@ public class MinhaContaActivity extends AppCompatActivity {
     private void configCliques(){
         findViewById(R.id.ib_salvar).setOnClickListener(view -> validaDados());
         findViewById(R.id.ib_voltar).setOnClickListener(view -> finish());
-
+        findViewById(R.id.btn_deslogar).setOnClickListener(view -> {
+            FirebaseHelper.getAuth().signOut();
+            startActivity(new Intent(this, MainActivity.class));
+            finish();
+        });
     }
 
     private void validaDados(){
