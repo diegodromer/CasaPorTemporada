@@ -41,7 +41,6 @@ public class FiltrarAnunciosActivity extends AppCompatActivity {
             }
         }
 
-
         configCliques();
 
         configSb();
@@ -69,9 +68,9 @@ public class FiltrarAnunciosActivity extends AppCompatActivity {
         sb_garagem.setProgress(0);
         sb_quarto.setProgress(0);
         sb_banheiro.setProgress(0);
-
-        finish();
     }
+
+
 
     public void filtrar(View view) {
         if (filtro == null) {
